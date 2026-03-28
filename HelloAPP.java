@@ -1,16 +1,19 @@
 public class HelloAPP {
     public static void main(String[] args) {
+
+        String names = "";
+
         if (args.length == 0) {
-            System.out.println("Hello, World!");
+            names = "World";
         } else {
-            System.out.print("Hello, ");
-            for (int i = 0; i < args.length; i++) {
-                System.out.print(args[i]);
-                if (i < args.length - 1) {
-                    System.out.print(", ");
+            for (String name : args) {
+                if (!names.isEmpty()) {
+                    names += ", ";
                 }
+                names += name;
             }
-            System.out.println("!");
         }
+
+        System.out.println("Hello, " + names + "!");
     }
 }
